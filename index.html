@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissors</title>
+    <link rel="stylesheet" href="./assets/css/styl.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">
+</head>
+<body>
+    <header> 
+        <h1>Rock Paper Scissors</h1>
+    </header>
+
+    <main>
+        <section class="firstBlock">
+            <article class="hMRounds">
+                <h3>how many rounds</h3>
+                <div>
+                    <input type="radio" name="rounds" value="5">
+                    <label>5</label>
+                    <input type="radio" name="rounds" value="10" >
+                    <label>10</label>
+                    <input type="radio" name="rounds" value="15">
+                    <label>15</label>
+                    <input type="radio" name="rounds" value="20">
+                    <label >20</label>
+                </div>
+            </article>
+
+            <article class="roundNumbers">
+                <h2>how many rounds</h2>
+                <div>
+                    <p class="roundNumber"></p>
+                    <p>/</p>
+                    <p class="ofRound"></p>
+                </div>
+            </article>
+        </section>
+
+        <section class="secondBlock">
+            <article class="resultBlock">
+                <p>USER</p>
+                <div>
+                    <p id="userResult"></p>
+                    <p>:</p>
+                    <p id="kiResult"></p>
+                </div>
+                <p>COMP</p>
+            </article>
+        </section>
+
+        <section class="chooseBlock">
+            <button onclick="userRock()">Rock</button>
+            <button onclick="userPaper()">Paper</button>
+            <button onclick="userScissors()">Scissors</button>
+        </section>
+
+        <section>
+            <p>MAKE YOUR MOVE</p>
+        </section>
+
+        <section>
+            <p onclick="restart()">restart</p>
+        </section>
+
+    </main>
+
+
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
