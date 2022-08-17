@@ -5,7 +5,8 @@ let round = 0
 let userPoint = 0
 let kiPoint = 0
 let userChosen 
-
+let userOutput = document.getElementById('userResult')
+let kiOutput = document.getElementById('kiResult')
 const choices = ['Rock', 'Paper', 'Scissors']
 
 let check = (uChoice) => {
@@ -27,20 +28,25 @@ let check = (uChoice) => {
             case 'RockScissors':
             case 'PaperRock':
                 userPoint++
-                document.getElementById('userResult').innerHtml = `${userPoint}`
-                document.getElementById('kiResult').innerHtml = `${kiPoint}`
-                break
+                userOutput.innerHTML = userPoint
+                kiOutput.innerHTML = kiPoint
+                //console.log('UserPoints', userPoint,' KiPoint', kiPoint)
+                break;
             case 'PaperScissors':
             case 'ScissorsRock':
             case 'RockPaper':
                 kiPoint++
-                //resultDisplay.innerHTML = "YOU LOSE!"
-                break
+                userOutput.innerHTML = userPoint
+                kiOutput.innerHTML = kiPoint
+                //console.log('UserPoints', userPoint,' KiPoint', kiPoint)
+                break;
             case 'PaperPaper':
             case 'ScissorsScissors':
             case 'RockRock':
-                //resultDisplay.innerHTML = "ITS A DRAW!"
-                break
+                userOutput.innerHTML = userPoint
+                kiOutput.innerHTML = kiPoint
+                //console.log('UserPoints', userPoint,' KiPoint', kiPoint)
+                break;
         }
 
         round++
