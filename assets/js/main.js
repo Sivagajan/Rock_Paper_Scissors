@@ -6,10 +6,8 @@ let userPoint = 0
 let kiPoint = 0
 let userChosen 
 
-
 const choices = ['Rock', 'Paper', 'Scissors']
 
-    
 let check = (uChoice) => {
 
     let choosenRounds = Number(document.querySelector('input[type=radio]:checked').value)
@@ -19,20 +17,18 @@ let check = (uChoice) => {
     if(round < choosenRounds){
 
         console.log(round ,' of ', choosenRounds)
-        
         let kiChoice = Math.floor(Math.random() * 3)
         console.log(kiChoice)
-
         let theChoice = `${choices[uChoice]}${choices[kiChoice]}`
-
         console.log(theChoice)
 
         switch (theChoice) {
             case 'ScissorsPaper':
             case 'RockScissors':
             case 'PaperRock':
-                //resultDisplay.innerHTML = "YOU WIN!"
                 userPoint++
+                document.getElementById('userResult').innerHtml = `${userPoint}`
+                document.getElementById('kiResult').innerHtml = `${kiPoint}`
                 break
             case 'PaperScissors':
             case 'ScissorsRock':
@@ -48,24 +44,27 @@ let check = (uChoice) => {
         }
 
         round++
+        if (round === choosenRounds){
+            check()
+        }
+
     }else{
         console.log('The Game is Over')
         console.log('UserPoints', userPoint,' KiPoint', kiPoint)
+        whosTheWinner(userPoint,kiPoint)
     }
 
-    if (round === choosenRounds){
-            check()
-    }
+}
 
-    if(userPoint > kiPoint)
-    {
+const whosTheWinner = (user, ki) =>{
+
+    if(user > ki){
         console.log('You WIN')
-    }else if(userPoint < kiPoint){
+    }else if(user < ki){
         console.log('You LOOSE')
-    }else if(userPoint === kiPoint){
+    }else if(user === ki){
         console.log('Its a DRAW')        
     }
-
 }
 
 let userRock = () => {
